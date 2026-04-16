@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+font-family: 'Inter', sans-serif;
   background: #0f172a; /* azul oscuro */
   color: #e2e8f0;
 }
@@ -107,4 +107,7 @@ body {
 .logs::-webkit-scrollbar-thumb {
   background: #38bdf8;
   border-radius: 10px;
+}
+.logs {
+  font-family: 'Courier New', monospace;
 }
