@@ -1,63 +1,110 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #714236;
-  color: white;
+  background: #0f172a; /* azul oscuro */
+  color: #e2e8f0;
 }
 
-.container {
-  text-align: center;
+/* Layout principal */
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #020617;
+  padding: 20px;
+  border-right: 1px solid #1e293b;
+}
+
+.sidebar h2 {
+  color: #38bdf8;
+  margin-bottom: 30px;
+}
+
+.sidebar p {
+  color: #94a3b8;
+  margin: 10px 0;
+}
+
+/* Contenido */
+.main {
+  flex: 1;
   padding: 30px;
 }
 
-h1 {
-  color: #E76814;
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+.header h1 {
+  color: #38bdf8;
+}
+
+/* Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
-  max-width: 600px;
-  margin: auto;
+  margin-top: 20px;
 }
 
+/* Cards */
 .card {
-  background: #891A10;
+  background: #020617;
   padding: 20px;
-  border-radius: 10px;
-  font-size: 18px;
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+  transition: 0.3s;
 }
 
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #38bdf8;
+}
+
+/* Métricas */
 .metrics {
-  max-width: 600px;
-  margin: 30px auto;
+  margin-top: 30px;
 }
 
 .bar {
-  background: #D8D4BC;
+  background: #1e293b;
   border-radius: 10px;
   overflow: hidden;
   margin: 10px 0;
 }
 
 .bar div {
-  background: #E76814;
-  height: 25px;
-  line-height: 25px;
-  text-align: center;
-  color: white;
-  transition: width 0.5s;
+  background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+  height: 20px;
+  text-align: right;
+  padding-right: 10px;
+  font-size: 12px;
 }
 
+/* Logs */
 .logs {
-  background: black;
+  margin-top: 30px;
+  background: #020617;
   padding: 15px;
-  max-width: 600px;
-  margin: auto;
-  height: 150px;
+  height: 200px;
   overflow-y: auto;
-  font-size: 14px;
-  text-align: left;
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+  font-size: 13px;
+}
+
+/* Scroll bonito */
+.logs::-webkit-scrollbar {
+  width: 6px;
+}
+.logs::-webkit-scrollbar-thumb {
+  background: #38bdf8;
   border-radius: 10px;
 }

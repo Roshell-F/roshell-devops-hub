@@ -7,32 +7,48 @@
 </head>
 <body>
 
-<div class="container">
-  <h1>DevOps Control Panel</h1>
+<div class="layout">
 
-  <div class="grid">
-    <div class="card" id="status"></div>
-    <div class="card" id="uptime"></div>
-    <div class="card" id="requests"></div>
-    <div class="card" id="time"></div>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>DevOps</h2>
+    <p>Dashboard</p>
+    <p>Monitoreo</p>
+    <p>Logs</p>
   </div>
 
-  <h2>Métricas</h2>
+  <!-- Main -->
+  <div class="main">
 
-  <div class="metrics">
-    <div>
-      CPU
-      <div class="bar"><div id="cpu-bar"></div></div>
+    <div class="header">
+      <h1>Control Panel</h1>
+      <span id="time"></span>
     </div>
 
-    <div>
+    <!-- Cards -->
+    <div class="grid">
+      <div class="card" id="status"></div>
+      <div class="card" id="uptime"></div>
+      <div class="card" id="requests"></div>
+      <div class="card">Sistema activo</div>
+    </div>
+
+    <!-- Métricas -->
+    <div class="metrics">
+      <h3>Uso del sistema</h3>
+
+      CPU
+      <div class="bar"><div id="cpu-bar"></div></div>
+
       RAM
       <div class="bar"><div id="ram-bar"></div></div>
     </div>
+
+    <!-- Logs -->
+    <div class="logs" id="logs"></div>
+
   </div>
 
-  <h2>Logs</h2>
-  <div id="logs" class="logs"></div>
 </div>
 
 <script>
@@ -49,7 +65,7 @@ async function loadData() {
   document.getElementById('status').innerText = "Status: " + data.status;
   document.getElementById('uptime').innerText = "Uptime: " + data.uptime.toFixed(1) + "s";
   document.getElementById('requests').innerText = "Requests: " + data.requests;
-  document.getElementById('time').innerText = "Time: " + data.time;
+  document.getElementById('time').innerText = data.time;
 
   document.getElementById('cpu-bar').style.width = data.cpu + "%";
   document.getElementById('cpu-bar').innerText = data.cpu + "%";
@@ -57,7 +73,7 @@ async function loadData() {
   document.getElementById('ram-bar').style.width = data.memory + "%";
   document.getElementById('ram-bar').innerText = data.memory + "%";
 
-  log("Sistema actualizado correctamente");
+  log("Sistema actualizado");
 }
 
 setInterval(loadData, 3000);
