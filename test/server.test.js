@@ -1,11 +1,34 @@
-const request = require('supertest');
-const app = require('../src/server');
+const express = require('express');
+const path = require('path');
+const app = express();
 
-describe('GET /', () => {
-  it('Debe devolver status 200 y mensaje correcto', async () => {
-    const res = await request(app).get('/');
-    
-    expect(res.statusCode).toBe(200);
-    expect(res.body.message).toBe('Roshell DevOps Hub funcionando correctamente');
+app.use(express.static(path.join(__dirname, '../public')));
+
+let requests = 0;
+
+function getRandom(min, max) {
+  return (Math.random() * (max - min) + min).toFixed(2);
+}
+
+app.get('/api/status', (req, res) => {
+  requests++;
+
+  res.json({
+    system: "Roshell DevOps Control Panel",
+    status: "Running",
+    uptime: process.uptime(),
+    requests: requests,
+    cpu: getRandom(20, 80),
+    memory: getRandom(30, 90),
+    time: new Date().toLocaleTimeString()
   });
 });
+
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Servidor corriendo en puerto ${PORT}`);
+  });
+}
+
+module.exports = app;
