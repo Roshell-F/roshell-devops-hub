@@ -1,4 +1,5 @@
 ## Capturas del sistema
+Este proyecto consiste en un panel de monitoreo DevOps desarrollado con Node.js, que simula métricas de un sistema en tiempo real como estado del servidor, uso de CPU y memoria, número de solicitudes y registros de actividad. Implementa un flujo completo de CI/CD utilizando GitHub Actions, contenedorización con Docker y despliegue automático en Render, demostrando la integración de desarrollo, pruebas y producción en un entorno moderno.
 
 ### Dashboard
 <img width="1919" height="1028" alt="image" src="https://github.com/user-attachments/assets/65ccf2a4-77df-4422-a157-8c81500403dd" />
