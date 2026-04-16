@@ -1,0 +1,17 @@
+{
+  "name": "roshell-devops-hub",
+  "version": "1.0.0",
+  "description": "Proyecto final DevOps con CI/CD, Docker y despliegue en Render",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "jest --detectOpenHandles"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "supertest": "^6.3.0"
+  }
+}
