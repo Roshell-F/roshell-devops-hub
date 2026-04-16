@@ -7,6 +7,7 @@
 <img width="1566" height="344" alt="image" src="https://github.com/user-attachments/assets/03de27a5-a099-4552-9020-3ab1fd5aeb60" />
 
 ### CI/CD Pipeline
+<img width="1919" height="928" alt="image" src="https://github.com/user-attachments/assets/e6a68384-3f2a-4c1e-b8cb-eba41cc8bb1d" />
 
 ### Docker Hub
 <img width="1847" height="859" alt="image" src="https://github.com/user-attachments/assets/b0d0c392-162a-4d77-a83e-332ce695ffe2" />
